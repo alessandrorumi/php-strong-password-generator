@@ -8,6 +8,7 @@
 
   <?php
     require_once __DIR__ . "/functions.php";
+    session_start();
   ?>
 </head>
 <body>
@@ -32,8 +33,6 @@
       <button type="submit" class="btn btn-primary">Genera Password</button>
     </div>
   </form>
-
-  <h3 class="text-center mt-2"> <?php echo generatePassword($length)?> </h3>
 </div>
   
 </body>
