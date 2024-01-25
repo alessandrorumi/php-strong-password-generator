@@ -47,6 +47,10 @@
         <input class="form-check-input" type="checkbox" name="numbers" id="numbers">
         <label class="form-check-label" for="numbers">Numeri</label>
       </div>
+      <div class="text-center">
+        <input class="form-check-input" type="checkbox" name="duplicate" id="duplicate">
+        <label class="form-check-label" for="duplicate">Duplicati</label>
+      </div>
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary">Genera Password</button>

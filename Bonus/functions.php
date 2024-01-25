@@ -11,10 +11,10 @@
     $uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $symbols = "!@#$%^&*()-=_+=<>?";
     $numbers = "0123456789";
-    $randomString = '';
+    $characters = '';
 
     if ($_GET["lowercase"]) {
-      $characters .= $lowercase;
+        $characters .= $lowercase;
     }
 
     if ($_GET["uppercase"]) {
@@ -29,11 +29,24 @@
         $characters .= $numbers;
     }
 
+    $duplicatedCharacters = array();
+    $randomString = '';
+
     for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+        $randomChar = $characters[rand(0, strlen($characters) - 1)];
+
+        if (!isset($_GET["duplicate"])) {
+            while (in_array($randomChar, $duplicatedCharacters)) {
+                $randomChar = $characters[rand(0, strlen($characters) - 1)];
+            }
+        }
+
+        $randomString .= $randomChar;
+        $duplicatedCharacters[] = $randomChar;
     }
 
     return $randomString;
-  }
+}
+
 ?>
   
