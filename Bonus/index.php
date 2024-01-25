@@ -23,11 +23,30 @@
   }
 </style>
 
-<div class="container col-md-4 mt-5">
+<div class="container col-md-6 mt-5">
+  <h1 class="text-center">Random Password Generator</h1>
   <form method="get">
-    <div class="mb-3">
-      <label for="length" class="form-label d-block text-center"><b>Seleziona il n° di caratteri della Password</b></label>
-      <input type="number" class="form-control" id="length" name="length" min="8" max="20">
+    <div class="mb-3 text-center">
+      <div class="text-center">
+        <input type="range" value="14" min="8" max="20" name="length" oninput="this.nextElementSibling.value = this.value">
+        <output>14</output>
+      </div>
+      <div class="text-center">
+        <input class="form-check-input" type="checkbox" name="lowercase" id="lowercase">
+        <label class="form-check-label" for="lowercase">Lettere Minuscole</label>
+      </div>
+      <div class="text-center">
+        <input class="form-check-input" type="checkbox" name="uppercase" id="uppercase">
+        <label class="form-check-label" for="uppercase">Lettere Maiuscole</label>
+      </div>
+      <div class="text-center">
+        <input class="form-check-input" type="checkbox" name="symbols" id="symbols">
+        <label class="form-check-label" for="symbols">Caratteri Speciali</label>
+      </div>
+      <div class="text-center">
+        <input class="form-check-input" type="checkbox" name="numbers" id="numbers">
+        <label class="form-check-label" for="numbers">Numeri</label>
+      </div>
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary">Genera Password</button>
